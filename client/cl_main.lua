@@ -5,6 +5,7 @@ local animdict
 local anim
 local breakchance
 local overheated = false
+local reward = false
 
 
 local boneoffsets = {
@@ -40,15 +41,15 @@ RegisterNetEvent('qb-metaldetecting:startdetect', function(data)
             flags = 49,
             }, {}, {}, function()
                 TriggerServerEvent("InteractSound_SV:PlayWithinDistance", 10, 'metaldetector', 0.2)
-                Wait(1500)
+                Wait(2000)
                 TriggerServerEvent('qb-metaldetecting:detectreward')
                 breakchance = math.random(1,100)
                 if breakchance <= Config.OverheatChance then
                     overheated = true
-                    QBCore.Functions.Notify('Your metal detector has overheated! Let it cool down.', 'error', 10000)
+                    QBCore.Functions.Notify('Your metal detector has overheated! Wait a minute.', 'error', 4000)
                     Wait(Config.OverheatTime)
                     overheated = false
-                    QBCore.Functions.Notify('Your metal detector has cooled down.', 'primary', 10000)
+                    QBCore.Functions.Notify('Your metal detector has cooled down.', 'primary', 4000)
                 end
             end, function() 
                 Wait(100)
@@ -57,7 +58,7 @@ RegisterNetEvent('qb-metaldetecting:startdetect', function(data)
             QBCore.Functions.Notify('Your metal detector is still too hot!', 'error', 5000)
         end 
     else 
-        QBCore.Functions.Notify('You cannot detect here. Find a suitable location.', 'error', 10000)
+        QBCore.Functions.Notify('You cannot detect here. Find a suitable location.', 'error', 5000)
     end
 end)
 
@@ -84,4 +85,241 @@ CreateThread(function()
             end
         end)
     end
+end)
+
+RegisterNetEvent('qb-metaldetector:tradingmenu', function()
+    exports['qb-menu']:openMenu({
+        {
+            id = 1,
+            header = "Common Material Trade",
+            txt = ""
+        },
+        {
+            id = 2,
+            header = "Trade 1",
+            txt = "50 Metal Trash for 30 Metal scrap!",
+            params = {
+                event = "qb-metaldetector:Trade2",
+                args = {
+                    number = 1,
+                    id = 2
+                }
+            }
+        },
+        {
+            id = 3,
+            header = "Trade 2",
+            txt = "50 Iron Trash for 30 Iron scrap!",
+            params = {
+                event = "qb-metaldetector:Trade3",
+                args = {
+                    number = 1,
+                    id = 3
+                }
+            }
+        },
+        {
+            id = 4,
+            header = "Trade 3",
+            txt = "50 Bullet Casings for 25 copper + 25 Gunpowder!",
+            params = {
+                event = "qb-metaldetector:Trade4",
+                args = {
+                    number = 1,
+                    id = 4
+                }
+            }
+        },
+        {
+            id = 5,
+            header = "Trade 4",
+            txt = "50 Aluminum Cans for 30 Aluminium scrap!",
+            params = {
+                event = "qb-metaldetector:Trade5",
+                args = {
+                    number = 1,
+                    id = 5
+                }
+            }
+        },
+        {
+            id = 6,
+            header = "Trade 5",
+            txt = "50 Steel Trash for 25 steel scrap!",
+            params = {
+                event = "qb-metaldetector:Trade6",
+                args = {
+                    number = 1,
+                    id = 5
+                }
+            }
+        },
+        {
+            id = 7,
+            header = "Trade 6",
+            txt = "5 Rusty knifes for a Dagger!",
+            params = {
+                event = "qb-metaldetector:Trade7",
+                args = {
+                    number = 1,
+                    id = 5
+                }
+            }
+        },
+        {
+            id = 8,
+            header = "Trade 7",
+            txt = "4 broken Metal Detectors for $200!",
+            params = {
+                event = "qb-metaldetector:Trade8",
+                args = {
+                    number = 1,
+                    id = 5
+                }
+            }
+        },
+        {
+            id = 8,
+            header = "Trade 7",
+            txt = "50 housekeys for 30 copper!",
+            params = {
+                event = "qb-metaldetector:Trade8",
+                args = {
+                    number = 1,
+                    id = 5
+                }
+            }
+        },
+        {
+          id = 9,
+          header = "Trade 8",
+          txt = "5 Broken phones for $50 + 1 phone!",
+          params = {
+              event = "qb-metaldetector:Trade9",
+              args = {
+                  number = 1,
+                  id = 6
+              }
+          }
+      },
+    })
+end)
+
+
+RegisterNetEvent('qb-metaldetector:Raretradingmenu', function()
+    exports['qb-menu']:openMenu({
+        {
+            id = 1,
+            header = "Rare Material Trade",
+            txt = ""
+        },
+        {
+            id = 2,
+            header = "Trade 1",
+            txt = "1 Burried Treasure for $15000!",
+            params = {
+                event = "qb-metaldetector:Trade2",
+                args = {
+                    number = 1,
+                    id = 2
+                }
+            }
+        },
+        {
+            id = 3,
+            header = "Trade 2",
+            txt = "1 Treasure Key for $1500!",
+            params = {
+                event = "qb-metaldetector:Trade3",
+                args = {
+                    number = 1,
+                    id = 3
+                }
+            }
+        },
+        {
+            id = 4,
+            header = "Trade 3",
+            txt = "1 Antique coin for $1000!",
+            params = {
+                event = "qb-metaldetector:Trade4",
+                args = {
+                    number = 1,
+                    id = 4
+                }
+            }
+        },
+        {
+            id = 5,
+            header = "Trade 4",
+            txt = "1 Golden Nuggets $200!",
+            params = {
+                event = "qb-metaldetector:Trade5",
+                args = {
+                    number = 1,
+                    id = 5
+                }
+            }
+        },
+        {
+            id = 6,
+            header = "Trade 5",
+            txt = "1 Gold Coin for $300!",
+            params = {
+                event = "qb-metaldetector:Trade6",
+                args = {
+                    number = 1,
+                    id = 5
+                }
+            }
+        },
+        {
+            id = 7,
+            header = "Trade 6",
+            txt = "Aicient Coin for $500!",
+            params = {
+                event = "qb-metaldetector:Trade7",
+                args = {
+                    number = 1,
+                    id = 5
+                }
+            }
+        },
+        {
+            id = 8,
+            header = "Trade 7",
+            txt = "WW2 Relic for $800!",
+            params = {
+                event = "qb-metaldetector:Trade8",
+                args = {
+                    number = 1,
+                    id = 5
+                }
+            }
+        },
+        {
+            id = 8,
+            header = "Trade 7",
+            txt = "20 Broken Gameboys for 1 working gameboy!",
+            params = {
+                event = "qb-metaldetector:Trade8",
+                args = {
+                    number = 1,
+                    id = 5
+                }
+            }
+        },
+        {
+          id = 9,
+          header = "Trade 8",
+          txt = "1 Pocket watch for $150!",
+          params = {
+              event = "qb-metaldetector:Trade9",
+              args = {
+                  number = 1,
+                  id = 6
+              }
+          }
+      },
+    })
 end)

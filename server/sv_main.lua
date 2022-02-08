@@ -16,14 +16,7 @@ RegisterNetEvent('qb-metaldetecting:detectreward', function()
         Player.Functions.AddItem(item, amount)
         TriggerClientEvent("inventory:client:ItemBox", src, QBCore.Shared.Items[item], "add")
         TriggerClientEvent('QBCore:Notify', src, 'You found '.. item ..'!', 'success')
-    elseif chance <= Config.UnCommonChance then 
-        local item = Config.UnCommonItems[math.random(1, #Config.UnCommonItems)]
-        local amount = Config.UnCommonAmount
-        
-        Player.Functions.AddItem(item, amount)
-        TriggerClientEvent("inventory:client:ItemBox", src, QBCore.Shared.Items[item], "add")
-        TriggerClientEvent('QBCore:Notify', src, 'You found '.. item ..'!', 'success')
-    elseif chance <= Config.RareChance then 
+    elseif chance >= Config.RareChance then 
         local item = Config.RareItems[math.random(1, #Config.RareItems)]
         local amount = Config.RareAmount
         
