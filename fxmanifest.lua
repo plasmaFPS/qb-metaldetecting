@@ -2,7 +2,8 @@ fx_version 'cerulean'
 game 'gta5'
 
 author 'plasma#2782 & EU ENVY#9641'
-description 'Simple QB metal detecting script'
+description 'In-Depth & Multi-Feature QB Metal Detecting Script'
+repo 'https://github.com/plasmaFPS/qb-metaldetector'
 version '1.0'
 
 client_scripts {
