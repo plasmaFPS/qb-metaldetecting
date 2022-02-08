@@ -1,17 +1,17 @@
 Config = {}
 
 
-Config.DebugPoly = true
+Config.DebugPoly = false
 
 Config.DetectTime = math.random(6000, 10000) -- The amount of time it takes to detect items!
 
-Config.CommonChance = 75 -- chance between 100 of finding a Common item.
+Config.CommonChance = 70 -- chance between 100 of finding a Common item.
 Config.RareChance = 95  -- chance between 100 of finding a Rare item.
 
 Config.CommonAmount = math.random(1,5) -- The amount of Common items you will recive!
 Config.RareAmount = 1 -- The amount of Rare items you will recive!
 
-Config.OverheatChance = 5 -- If the math.random is between 1 and 5 your metaldetector will overheat!
+Config.OverheatChance = 6 -- If the math.random is between 1 and 5 your metaldetector will overheat!
 Config.OverheatTime = math.random(50000, 60000) -- The amount of time your metal detector is overheated!
 
 Config.CommonItems = {

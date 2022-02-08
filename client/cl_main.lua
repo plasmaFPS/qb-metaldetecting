@@ -96,7 +96,7 @@ RegisterNetEvent('qb-metaldetector:tradingmenu', function()
             header = "Trade 1",
             txt = "50 Metal Trash for 30 Metal scrap!",
             params = {
-                event = "qb-metaldetector:Trade2",
+                event = "qb-metaldetector:client:Trade2",
                 args = {
                     number = 1,
                     id = 2
@@ -108,7 +108,7 @@ RegisterNetEvent('qb-metaldetector:tradingmenu', function()
             header = "Trade 2",
             txt = "50 Iron Trash for 30 Iron scrap!",
             params = {
-                event = "qb-metaldetector:Trade3",
+                event = "qb-metaldetector:client:Trade3",
                 args = {
                     number = 1,
                     id = 3
@@ -118,9 +118,9 @@ RegisterNetEvent('qb-metaldetector:tradingmenu', function()
         {
             id = 4,
             header = "Trade 3",
-            txt = "50 Bullet Casings for 25 copper + 25 Gunpowder!",
+            txt = "50 Bullet Casings for 30 copper!",
             params = {
-                event = "qb-metaldetector:Trade4",
+                event = "qb-metaldetector:client:Trade4",
                 args = {
                     number = 1,
                     id = 4
@@ -132,7 +132,7 @@ RegisterNetEvent('qb-metaldetector:tradingmenu', function()
             header = "Trade 4",
             txt = "50 Aluminum Cans for 30 Aluminium scrap!",
             params = {
-                event = "qb-metaldetector:Trade5",
+                event = "qb-metaldetector:client:Trade5",
                 args = {
                     number = 1,
                     id = 5
@@ -144,7 +144,7 @@ RegisterNetEvent('qb-metaldetector:tradingmenu', function()
             header = "Trade 5",
             txt = "50 Steel Trash for 25 steel scrap!",
             params = {
-                event = "qb-metaldetector:Trade6",
+                event = "qb-metaldetector:client:Trade6",
                 args = {
                     number = 1,
                     id = 5
@@ -154,9 +154,9 @@ RegisterNetEvent('qb-metaldetector:tradingmenu', function()
         {
             id = 7,
             header = "Trade 6",
-            txt = "5 Rusty knifes for a Dagger!",
+            txt = "5 Broken knifes for a Dagger!",
             params = {
-                event = "qb-metaldetector:Trade7",
+                event = "qb-metaldetector:client:Trade7",
                 args = {
                     number = 1,
                     id = 5
@@ -166,9 +166,9 @@ RegisterNetEvent('qb-metaldetector:tradingmenu', function()
         {
             id = 8,
             header = "Trade 7",
-            txt = "4 broken Metal Detectors for $200!",
+            txt = "1 broken Metal Detectors for $30!",
             params = {
-                event = "qb-metaldetector:Trade8",
+                event = "qb-metaldetector:client:Trade8",
                 args = {
                     number = 1,
                     id = 5
@@ -177,10 +177,10 @@ RegisterNetEvent('qb-metaldetector:tradingmenu', function()
         },
         {
             id = 8,
-            header = "Trade 7",
+            header = "Trade 8",
             txt = "50 housekeys for 30 copper!",
             params = {
-                event = "qb-metaldetector:Trade8",
+                event = "qb-metaldetector:client:Trade9",
                 args = {
                     number = 1,
                     id = 5
@@ -189,10 +189,10 @@ RegisterNetEvent('qb-metaldetector:tradingmenu', function()
         },
         {
           id = 9,
-          header = "Trade 8",
-          txt = "5 Broken phones for $50 + 1 phone!",
+          header = "Trade 9",
+          txt = "1 Broken phones for $25!",
           params = {
-              event = "qb-metaldetector:Trade9",
+              event = "qb-metaldetector:client:phoness",
               args = {
                   number = 1,
                   id = 6
@@ -213,7 +213,7 @@ RegisterNetEvent('qb-metaldetector:Raretradingmenu', function()
         {
             id = 2,
             header = "Burried Treasure",
-            txt = "Trade 1 Burried Treasure for $15,000!",
+            txt = "Trade 1 Burried Treasure for $10,000!",
             params = {
                 event = "qb-metaldetector:client:burriedtreasure",
                 args = {
@@ -225,7 +225,7 @@ RegisterNetEvent('qb-metaldetector:Raretradingmenu', function()
         {
             id = 3,
             header = "Treasure Key",
-            txt = "Trade 1 Burried Treasure for $1,500!",
+            txt = "Trade 1 Treasure Key for $1,500!",
             params = {
                 event = "qb-metaldetector:client:treasurekey",
                 args = {
@@ -236,10 +236,10 @@ RegisterNetEvent('qb-metaldetector:Raretradingmenu', function()
         },
         {
             id = 4,
-            header = "Trade 3",
-            txt = "1 Antique coin for $1000!",
+            header = "Antique Coin",
+            txt = "1 Antique coin for $500!",
             params = {
-                event = "qb-metaldetector:Trade4",
+                event = "qb-metaldetector:client:antcoin",
                 args = {
                     number = 1,
                     id = 4
@@ -248,10 +248,10 @@ RegisterNetEvent('qb-metaldetector:Raretradingmenu', function()
         },
         {
             id = 5,
-            header = "Trade 4",
+            header = "Golden Nuggets",
             txt = "1 Golden Nuggets $200!",
             params = {
-                event = "qb-metaldetector:Trade5",
+                event = "qb-metaldetector:client:goldnug",
                 args = {
                     number = 1,
                     id = 5
@@ -260,10 +260,10 @@ RegisterNetEvent('qb-metaldetector:Raretradingmenu', function()
         },
         {
             id = 6,
-            header = "Trade 5",
+            header = "Gold Coin",
             txt = "1 Gold Coin for $300!",
             params = {
-                event = "qb-metaldetector:Trade6",
+                event = "qb-metaldetector:client:goldcoin",
                 args = {
                     number = 1,
                     id = 5
@@ -272,10 +272,10 @@ RegisterNetEvent('qb-metaldetector:Raretradingmenu', function()
         },
         {
             id = 7,
-            header = "Trade 6",
-            txt = "Aicient Coin for $500!",
+            header = "Ancient Coin",
+            txt = "Ancient Coin for $1000!",
             params = {
-                event = "qb-metaldetector:Trade7",
+                event = "qb-metaldetector:client:ancientcoin",
                 args = {
                     number = 1,
                     id = 5
@@ -284,10 +284,10 @@ RegisterNetEvent('qb-metaldetector:Raretradingmenu', function()
         },
         {
             id = 8,
-            header = "Trade 7",
+            header = "WW2 Relic",
             txt = "WW2 Relic for $800!",
             params = {
-                event = "qb-metaldetector:Trade8",
+                event = "qb-metaldetector:client:ww2relic",
                 args = {
                     number = 1,
                     id = 5
@@ -308,10 +308,10 @@ RegisterNetEvent('qb-metaldetector:Raretradingmenu', function()
         },
         {
           id = 9,
-          header = "Trade 8",
+          header = "Pocket watch",
           txt = "1 Pocket watch for $150!",
           params = {
-              event = "qb-metaldetector:Trade9",
+              event = "qb-metaldetector:client:pocketwatch",
               args = {
                   number = 1,
                   id = 6
@@ -457,3 +457,139 @@ RegisterNetEvent('qb-metaldetector:client:pocketwatch', function(cb)
     end, item)
     
 end)
+
+RegisterNetEvent('qb-metaldetector:client:Trade2', function(cb)
+    local item = 'metaltrash'
+    local cb = false
+
+    QBCore.Functions.TriggerCallback('QBCore:HasItem', function(HasItem)
+        if HasItem then
+            cb = true
+            TriggerServerEvent('qb-metaldetector:server:metaltrash', cb)
+        else
+            QBCore.Functions.Notify('You do not have Any Metal trash.', 'error', 5000)
+        end
+    end, item)
+    
+end)
+
+RegisterNetEvent('qb-metaldetector:client:Trade3', function(cb)
+    local item = 'irontrash'
+    local cb = false
+
+    QBCore.Functions.TriggerCallback('QBCore:HasItem', function(HasItem)
+        if HasItem then
+            cb = true
+            TriggerServerEvent('qb-metaldetector:server:irontrash', cb)
+        else
+            QBCore.Functions.Notify('You do not have Any iron trash.', 'error', 5000)
+        end
+    end, item)
+    
+end)
+
+RegisterNetEvent('qb-metaldetector:client:Trade4', function(cb)
+    local item = 'bulletcasings'
+    local cb = false
+
+    QBCore.Functions.TriggerCallback('QBCore:HasItem', function(HasItem)
+        if HasItem then
+            cb = true
+            TriggerServerEvent('qb-metaldetector:server:bullet', cb)
+        else
+            QBCore.Functions.Notify('You do not have Any bullet casings.', 'error', 5000)
+        end
+    end, item)
+    
+end)
+
+RegisterNetEvent('qb-metaldetector:client:Trade5', function(cb)
+    local item = 'Aluminumcan'
+    local cb = false
+
+    QBCore.Functions.TriggerCallback('QBCore:HasItem', function(HasItem)
+        if HasItem then
+            cb = true
+            TriggerServerEvent('qb-metaldetector:server:cans', cb)
+        else
+            QBCore.Functions.Notify('You do not have Any Aluminum cans.', 'error', 5000)
+        end
+    end, item)
+    
+end)
+
+RegisterNetEvent('qb-metaldetector:client:Trade6', function(cb)
+    local item = 'steeltrash'
+    local cb = false
+
+    QBCore.Functions.TriggerCallback('QBCore:HasItem', function(HasItem)
+        if HasItem then
+            cb = true
+            TriggerServerEvent('qb-metaldetector:server:steeltrash', cb)
+        else
+            QBCore.Functions.Notify('You do not have Any steel trash.', 'error', 5000)
+        end
+    end, item)
+    
+end)
+
+RegisterNetEvent('qb-metaldetector:client:Trade7', function(cb)
+    local item = 'brokenknife'
+    local cb = false
+
+    QBCore.Functions.TriggerCallback('QBCore:HasItem', function(HasItem)
+        if HasItem then
+            cb = true
+            TriggerServerEvent('qb-metaldetector:server:dagger', cb)
+        else
+            QBCore.Functions.Notify('You do not have Any broken knifes.', 'error', 5000)
+        end
+    end, item)
+    
+end)
+
+RegisterNetEvent('qb-metaldetector:client:Trade8', function(cb)
+    local item = 'brokendetector'
+    local cb = false
+
+    QBCore.Functions.TriggerCallback('QBCore:HasItem', function(HasItem)
+        if HasItem then
+            cb = true
+            TriggerServerEvent('qb-metaldetector:server:detector', cb)
+        else
+            QBCore.Functions.Notify('You do not have Any broken detectors.', 'error', 5000)
+        end
+    end, item)
+    
+end)
+
+RegisterNetEvent('qb-metaldetector:client:Trade9', function(cb)
+    local item = 'housekeys'
+    local cb = false
+
+    QBCore.Functions.TriggerCallback('QBCore:HasItem', function(HasItem)
+        if HasItem then
+            cb = true
+            TriggerServerEvent('qb-metaldetector:server:keys', cb)
+        else
+            QBCore.Functions.Notify('You do not have Any housekeys.', 'error', 5000)
+        end
+    end, item)
+    
+end)
+
+RegisterNetEvent('qb-metaldetector:client:phoness', function(cb)
+    local item = 'brokenphone'
+    local cb = false
+
+    QBCore.Functions.TriggerCallback('QBCore:HasItem', function(HasItem)
+        if HasItem then
+            cb = true
+            TriggerServerEvent('qb-metaldetector:server:phone123', cb)
+        else
+            QBCore.Functions.Notify('You do not have any broken phones.', 'error', 5000)
+        end
+    end, item)
+    
+end)
+
