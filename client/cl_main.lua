@@ -7,7 +7,6 @@ local breakchance
 local overheated = false
 local reward = false
 
-
 local boneoffsets = {
     ["w_am_digiscanner"] = {
         bone = 18905,
@@ -15,7 +14,6 @@ local boneoffsets = {
         rotation = vector3(270.0, 90.0, 80.0),
     },
 }
-
 
 local function AttachEntity(ped, model)
     if boneoffsets[model] then
@@ -25,7 +23,6 @@ local function AttachEntity(ped, model)
         AttachEntityToEntity(ent, ped, GetPedBoneIndex(ped, boneoffsets[model].bone), boneoffsets[model].offset, boneoffsets[model].rotation, 1, 1, 0, 0, 2, 1)
     end
 end
-
 
 RegisterNetEvent('qb-metaldetecting:startdetect', function(data)
     if inZone == 1 then 
@@ -62,7 +59,6 @@ RegisterNetEvent('qb-metaldetecting:startdetect', function(data)
     end
 end)
 
-
 CreateThread(function() 
     for k, v in pairs(Config.DetectZones) do
         local MetalZone = PolyZone:Create(v.zones, {
@@ -86,6 +82,7 @@ CreateThread(function()
         end)
     end
 end)
+
 
 RegisterNetEvent('qb-metaldetector:tradingmenu', function()
     exports['qb-menu']:openMenu({
@@ -215,10 +212,10 @@ RegisterNetEvent('qb-metaldetector:Raretradingmenu', function()
         },
         {
             id = 2,
-            header = "Trade 1",
-            txt = "1 Burried Treasure for $15000!",
+            header = "Burried Treasure",
+            txt = "Trade 1 Burried Treasure for $15,000!",
             params = {
-                event = "qb-metaldetector:Trade2",
+                event = "qb-metaldetector:client:burriedtreasure",
                 args = {
                     number = 1,
                     id = 2
@@ -227,10 +224,10 @@ RegisterNetEvent('qb-metaldetector:Raretradingmenu', function()
         },
         {
             id = 3,
-            header = "Trade 2",
-            txt = "1 Treasure Key for $1500!",
+            header = "Treasure Key",
+            txt = "Trade 1 Burried Treasure for $1,500!",
             params = {
-                event = "qb-metaldetector:Trade3",
+                event = "qb-metaldetector:client:treasurekey",
                 args = {
                     number = 1,
                     id = 3
@@ -299,10 +296,10 @@ RegisterNetEvent('qb-metaldetector:Raretradingmenu', function()
         },
         {
             id = 8,
-            header = "Trade 7",
-            txt = "20 Broken Gameboys for 1 working gameboy!",
+            header = "Broken Gameboys",
+            txt = "Trade 10 Broken Gameboys for 1 working Gameboy!",
             params = {
-                event = "qb-metaldetector:Trade8",
+                event = "qb-metaldetector:client:brokengameboy",
                 args = {
                     number = 1,
                     id = 5
@@ -322,4 +319,141 @@ RegisterNetEvent('qb-metaldetector:Raretradingmenu', function()
           }
       },
     })
+end)
+
+
+RegisterNetEvent('qb-metaldetector:client:burriedtreasure', function(cb)
+    local item = 'burriedtreasure'
+    local cb = false
+
+    QBCore.Functions.TriggerCallback('QBCore:HasItem', function(HasItem)
+        if HasItem then
+            cb = true
+            TriggerServerEvent('qb-metaldetector:server:burriedtreasure', cb)
+        else
+            QBCore.Functions.Notify('You do not have burried treasure.', 'error', 5000)
+        end
+    end, item)
+    
+end)
+
+RegisterNetEvent('qb-metaldetector:client:treasurekey', function(cb)
+    local item = 'treasurekey'
+    local cb = false
+
+    QBCore.Functions.TriggerCallback('QBCore:HasItem', function(HasItem)
+        if HasItem then
+            cb = true
+            TriggerServerEvent('qb-metaldetector:server:treasurekey', cb)
+        else
+            QBCore.Functions.Notify('You do not have a Treasure Key.', 'error', 5000)
+        end
+    end, item)
+    
+end)
+
+RegisterNetEvent('qb-metaldetector:client:antcoin', function(cb)
+    local item = 'antiquecoin'
+    local cb = false
+
+    QBCore.Functions.TriggerCallback('QBCore:HasItem', function(HasItem)
+        if HasItem then
+            cb = true
+            TriggerServerEvent('qb-metaldetector:server:antcoin', cb)
+        else
+            QBCore.Functions.Notify('You do not have an Antique Coin', 'error', 5000)
+        end
+    end, item)
+    
+end)
+
+RegisterNetEvent('qb-metaldetector:client:goldnug', function(cb)
+    local item = 'goldennugget'
+    local cb = false
+
+    QBCore.Functions.TriggerCallback('QBCore:HasItem', function(HasItem)
+        if HasItem then
+            cb = true
+            TriggerServerEvent('qb-metaldetector:server:goldnug', cb)
+        else
+            QBCore.Functions.Notify('You do not have a Golden Nugget.', 'error', 5000)
+        end
+    end, item)
+    
+end)
+
+RegisterNetEvent('qb-metaldetector:client:goldcoin', function(cb)
+    local item = 'goldcoin'
+    local cb = false
+
+    QBCore.Functions.TriggerCallback('QBCore:HasItem', function(HasItem)
+        if HasItem then
+            cb = true
+            TriggerServerEvent('qb-metaldetector:server:goldcoin', cb)
+        else
+            QBCore.Functions.Notify('You do not have a Gold Coin.', 'error', 5000)
+        end
+    end, item)
+    
+end)
+
+
+RegisterNetEvent('qb-metaldetector:client:ancientcoin', function(cb)
+    local item = 'ancientcoin'
+    local cb = false
+
+    QBCore.Functions.TriggerCallback('QBCore:HasItem', function(HasItem)
+        if HasItem then
+            cb = true
+            TriggerServerEvent('qb-metaldetector:server:ancientcoin', cb)
+        else
+            QBCore.Functions.Notify('You do not have an Ancient Coin.', 'error', 5000)
+        end
+    end, item)
+    
+end)
+
+RegisterNetEvent('qb-metaldetector:client:ww2relic', function(cb)
+    local item = 'ww2relic'
+    local cb = false
+
+    QBCore.Functions.TriggerCallback('QBCore:HasItem', function(HasItem)
+        if HasItem then
+            cb = true
+            TriggerServerEvent('qb-metaldetector:server:ww2relic', cb)
+        else
+            QBCore.Functions.Notify('You do not have a WW2 Relic.', 'error', 5000)
+        end
+    end, item)
+    
+end)
+
+RegisterNetEvent('qb-metaldetector:client:brokengameboy', function(cb)
+    local item = 'brokengameboy'
+    local cb = false
+
+    QBCore.Functions.TriggerCallback('QBCore:HasItem', function(HasItem)
+        if HasItem then
+            cb = true
+            TriggerServerEvent('qb-metaldetector:server:brokengameboy', cb)
+        else
+            QBCore.Functions.Notify('You do not have Broken Gameboys.', 'error', 5000)
+        end
+    end, item)
+    
+end)
+
+RegisterNetEvent('qb-metaldetector:client:pocketwatch', function(cb)
+    local item = 'pocketwatch'
+    local cb = false
+
+    QBCore.Functions.TriggerCallback('QBCore:HasItem', function(HasItem)
+        if HasItem then
+            cb = true
+            TriggerServerEvent('qb-metaldetector:server:pocketwatch', cb)
+        else
+            QBCore.Functions.Notify('You do not have a Pocketwatch.', 'error', 5000)
+        end
+    end, item)
+    
 end)

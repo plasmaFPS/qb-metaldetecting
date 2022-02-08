@@ -1,7 +1,7 @@
 Config = {}
 
 
-Config.DebugPoly = false
+Config.DebugPoly = true
 
 Config.DetectTime = math.random(6000, 10000) -- The amount of time it takes to detect items!
 
