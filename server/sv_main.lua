@@ -56,8 +56,8 @@ RegisterServerEvent('qb-metaldetector:server:CommonTrade', function(data)
         if check ~= nil then
             if check.amount >= 50 then
                 Player.Functions.RemoveItem(item, 50)
-                Player.Functions.AddItem('ironscrap', 30)
-                TriggerClientEvent('QBCore:Notify', src, 'You traded 50 Iron Trash'..' for 30 Iron Scrap.', 'success')
+                Player.Functions.AddItem('iron', 30)
+                TriggerClientEvent('QBCore:Notify', src, 'You traded 50 Iron Trash'..' for 30 Iron.', 'success')
             else 
                 TriggerClientEvent('QBCore:Notify', src, "You don't have enough Iron Scrap..", 'error')
             end 

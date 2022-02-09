@@ -107,7 +107,7 @@ RegisterNetEvent('qb-metaldetector:CommonTradingMenu', function(data)
         {
             id = 3,
             header = "Iron Trash",
-            txt = "Trade 50 Iron Trash for 30 Iron Scrap!",
+            txt = "Trade 50 Iron Trash for 30 Iron",
             params = {
                 isServer = true,
                 event = "qb-metaldetector:server:CommonTrade",
@@ -133,7 +133,7 @@ RegisterNetEvent('qb-metaldetector:CommonTradingMenu', function(data)
         {
             id = 5,
             header = "Aluminum Cans",
-            txt = "Trade 50 Aluminum Cans for 30 Aluminium Scrap!",
+            txt = "Trade 50 Aluminum Cans for 30 Aluminium",
             params = {
                 isServer = true,
                 event = "qb-metaldetector:server:CommonTrade",
@@ -146,7 +146,7 @@ RegisterNetEvent('qb-metaldetector:CommonTradingMenu', function(data)
         {
             id = 6,
             header = "Steel Trash",
-            txt = "Trade 50 Steel Trash for 25 steel Scrap!",
+            txt = "Trade 50 Steel Trash for 25 Steel!",
             params = {
                 isServer = true,
                 event = "qb-metaldetector:server:CommonTrade",
