@@ -20,6 +20,10 @@ Mady by <a href="https://github.com/plasmaFPS">plasma#2782</a> & <a href="https:
 - Custom Prop with animations
 - Easily configurable detect locations using PolyZones
 
+## Future Updates
+- Add sell values to config
+- Add locales system
+
 ## Credits
 - Inspiration - <a href ="https://github.com/glitchdetector/fivem-prospecting">**fivem-prospecting**</a> & <a href ="https://github.com/Alivemonstor/al-metaldetector">**al-metaldetector**</a>
 - Custom Prop made by <a href="https://www.turbosquid.com/3d-models/3d-metal-detector/1138741">**Vartanyan**</a> Converted to RAGE by <a href="https://github.com/glitchdetector/">**glitchdetector**</a> (<a href="https://creativecommons.org/licenses/by-nd/3.0/">**CC BY-ND 3.0**</a>)
@@ -28,10 +32,22 @@ Mady by <a href="https://github.com/plasmaFPS">plasma#2782</a> & <a href="https:
 <a href="https://choosealicense.com/licenses/gpl-3.0/">**GNU General Public License v3.0**</a>
 
 ## Inserts (Shops / Items)
-**Insert this in your qb-shops > config.lua, ensure you change the array index & slot # to match your config.**
-<pre>[16] = { name = "metaldetector", price = 500, amount = 50, info = {}, type = "item", slot = 16, },</pre>
 
-**Insert this in your qb-core > shared > items.lua**
+**1.** Insert the images located in the [IMAGES] folder into your inventories html > images directory.
+
+**2. (Optional)** If you would like the metal detector purchaseable from a shop: 
+- Insert this line into your qb-shops > config.lua (wherever you want it), ensure you change the array index & slot #'s to match your config.
+
+<pre>[1] = {
+  name = "metaldetector", 
+  price = 500, 
+  amount = 50, 
+  info = {}, 
+  type = "item", 
+  slot = 1
+},</pre>
+
+**3.** Insert this list of items in your qb-core > shared > items.lua
 <pre>-- qb-metaldetecting 
 
 ["metaldetector"] = {
