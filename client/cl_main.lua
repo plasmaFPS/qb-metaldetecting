@@ -5,7 +5,6 @@ local animdict
 local anim
 local breakchance
 local overheated = false
-local reward = false
 
 local boneoffsets = {
     ["w_am_digiscanner"] = {
