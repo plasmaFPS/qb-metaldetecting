@@ -1,19 +1,39 @@
 Config = {}
 
+-- display polyzones (green boxes)
+Config.DebugPoly = false 
 
-Config.DebugPoly = false
+-- common trade ped location & ped hash
+Config.CommonPedLocation = vector4(-1158.44, -1986.14, 13.16, 322.02)
+Config.CommonPed = 'mp_m_forgery_01'
 
-Config.DetectTime = math.random(6000, 10000) -- The amount of time it takes to detect items!
+-- rare trade ped location & ped hash
+Config.RarePedLocation = vector4(-2085.17, -1017.98, 12.78, 74.19)
+Config.RarePed = 'mp_m_weapexp_01'
 
-Config.CommonChance = 70 -- chance between 100 of finding a Common item.
-Config.RareChance = 95  -- chance between 100 of finding a Rare item.
+-- the amount of time it takes to detect items. (progressbar)
+Config.DetectTime = math.random(6000, 10000) 
 
-Config.CommonAmount = math.random(1,5) -- The amount of Common items you will recive!
-Config.RareAmount = 1 -- The amount of Rare items you will recive!
+-- if doesnt land on common or rare you get nothing.
+-- 70% chance of receiving common item.
+Config.CommonChance = 70
 
-Config.OverheatChance = 6 -- If the math.random is between 1 and 5 your metaldetector will overheat!
-Config.OverheatTime = math.random(50000, 60000) -- The amount of time your metal detector is overheated!
+-- 5% chance of receiving rare item.
+Config.RareChance = 95
 
+-- The amount of common items received when detected.
+Config.CommonAmount = math.random(1,5) 
+
+-- The amount of rare items received when detected.
+Config.RareAmount = 1 
+
+-- %6 chance of overheating. 
+Config.OverheatChance = 6 
+
+-- how long the detecter gets overheated for
+Config.OverheatTime = math.random(50000, 60000) 
+
+-- list of common items detectable
 Config.CommonItems = {
     'metaltrash',
     'irontrash',
@@ -26,6 +46,7 @@ Config.CommonItems = {
     'housekeys',
 }
 
+-- list of rare items detectable
 Config.RareItems = {
     'burriedtreasure',
     'treasurekey',
@@ -38,7 +59,7 @@ Config.RareItems = {
     'pocketwatch',
 }
 
--- Metal Detection zones
+-- metal detection zones
 Config.DetectZones = {
     [1] = {
         label = "PierBeach",
@@ -66,7 +87,7 @@ Config.DetectZones = {
         },
     },
     [3] = {
-        label = "Golf place",
+        label = "Golf Course",
         zones = {
             vector2(-1075.5496826172, -145.32153320312),
             vector2(-1324.7716064453, 23.515180587769),
