@@ -7,10 +7,10 @@ Mady by <a href="https://github.com/plasmaFPS">plasma#2782</a> & <a href="https:
 (link)
 
 ## Dependencies
-<a href="https://github.com/qbcore-framework/qb-core">**qb-core**</a>
-<a href="https://github.com/qbcore-framework/qb-menu">**qb-menu**</a>
-<a href="https://github.com/BerkieBb/qb-target">**qb-target**</a>
-<a href="https://github.com/mkafrin/PolyZone">**PolyZone**</a>
+- <a href="https://github.com/qbcore-framework/qb-core">**qb-core**</a>
+- <a href="https://github.com/qbcore-framework/qb-menu">**qb-menu**</a>
+- <a href="https://github.com/BerkieBb/qb-target">**qb-target**</a>
+- <a href="https://github.com/mkafrin/PolyZone">**PolyZone**</a>
 
 ## Features
 - Easy to understand config with options for script customization.
